@@ -1,9 +1,11 @@
 "use client";
+import { Button, Heading } from "@chakra-ui/react";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import { Inter } from "next/font/google";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -61,17 +63,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <button style={{ padding: "10px", margin: "10px" }} onClick={signUp}>
-          Sign Up
-        </button>
-        <button style={{ padding: "10px", margin: "10px" }} onClick={signIn}>
-          Sign In
-        </button>
-        <button style={{ padding: "10px", margin: "10px" }} onClick={signOut}>
-          Sign Out
-        </button>
-        <h1 style={{ padding: "10px", margin: "10px" }}>Posts</h1>
-        {children}
+        <Providers>
+          <Button style={{ padding: "10px", margin: "10px" }} onClick={signUp}>
+            Sign Up
+          </Button>
+          <Button style={{ padding: "10px", margin: "10px" }} onClick={signIn}>
+            Sign In
+          </Button>
+          <Button style={{ padding: "10px", margin: "10px" }} onClick={signOut}>
+            Sign Out
+          </Button>
+          <Heading style={{ padding: "10px", margin: "10px" }}>Posts</Heading>
+          {children}
+        </Providers>
       </body>
     </html>
   );

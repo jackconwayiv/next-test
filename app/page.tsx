@@ -6,7 +6,7 @@ import { cookies, headers } from "next/headers";
 export default async function Posts() {
   const supabase = createServerComponentSupabaseClient({ headers, cookies });
   const { data: posts } = await supabase.from("posts").select();
-  console.log("Hello from the server!");
+  // console.log("Hello from the server!");
   return (
     <div>
       <pre>{JSON.stringify(posts, null, 2)}</pre>
