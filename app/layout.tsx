@@ -73,7 +73,6 @@ export default function RootLayout({
           <Button style={{ padding: "10px", margin: "10px" }} onClick={signOut}>
             Sign Out
           </Button>
-          <Heading style={{ padding: "10px", margin: "10px" }}>Posts</Heading>
           {children}
         </Providers>
       </body>
